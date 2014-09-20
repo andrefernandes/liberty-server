@@ -23,4 +23,7 @@ To create the Liberty assembly artifact just run:
 
     mvn clean package
 
+This will produce the "wlp-VERSION.zip" file that you can reuse as
+an assembly. You can also edit the POM in order to enable "mvn deploy"
+into your own Maven/Nexus repository.
 
