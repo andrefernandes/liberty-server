@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example.liberty</groupId>
+  <artifactId>liberty-server</artifactId>
+  <packaging>liberty-assembly</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Liberty Server Assembly</name>
+  <dependencies>
+  </dependencies>
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>net.wasdev.wlp.maven.plugins</groupId>
+            <artifactId>liberty-maven-plugin</artifactId> 
+            <version>1.0</version>
+       <executions>
+        <execution>
+            <id>package-server</id>
+            <phase>package</phase>
+            <goals>
+                <goal>package-server</goal>
+            </goals>
+            <configuration>
+                <packageFile>./wlp-${project.version}.zip</packageFile>
+            </configuration>
+        </execution>
+       </executions>
+  
+          <extensions>true</extensions>
+            <configuration>
+                <installDirectory>./wlp</installDirectory>
+                <archive>./wlp.zip</archive>
+            </configuration>         
+        </plugin>
+    </plugins>
+  </build>
+</project>
